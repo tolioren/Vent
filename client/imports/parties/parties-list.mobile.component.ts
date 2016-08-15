@@ -9,7 +9,7 @@ import template from './parties-list.mobile.component.html';
 
 @Component({
   template,
-  viewProviders: [PaginationService],
+  providers: [PaginationService],
   directives: [PaginationControlsCmp],
   pipes: [RsvpPipe, DisplayMainImagePipe]
 })
