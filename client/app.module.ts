@@ -18,16 +18,18 @@ import { METEOR_PROVIDERS } from 'angular2-meteor';
 import { routing } from './routes';
 import {PartiesFormComponent} from './imports/parties/parties-form.component';
 import {PartiesListComponent} from './imports/parties/parties-list.web.component';
+import {PartyDetailsComponent} from './imports/parties/party-details.component';
 import {PartiesUpload} from './imports/parties/parties-upload.component';
 import {AuthModule} from './imports/auth/auth';
 
 @NgModule({
     declarations: [
         AppWebComponent,
-        GOOGLE_MAPS_DIRECTIVES,
         PartiesFormComponent,
         PartiesListComponent,
-        PartiesUpload
+        PartyDetailsComponent,
+        PartiesUpload,
+        GOOGLE_MAPS_DIRECTIVES
     ],
     imports: [
         BrowserModule,
@@ -44,6 +46,7 @@ import {AuthModule} from './imports/auth/auth';
         MdInputModule,
         MdCheckboxModule,
         AuthModule
+
     ],
     providers: [GOOGLE_MAPS_PROVIDERS, METEOR_PROVIDERS],
     bootstrap:    [AppWebComponent]

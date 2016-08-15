@@ -11,6 +11,9 @@ import ionicSelector from 'ionic-selector';
 import '../both/methods/parties.methods';
 import {AppModule} from './app.module';
 
+import 'angular2-meteor-accounts-ui/build/login-buttons.scss';
+import 'ng2-material/core.scss';
+
 // if (Meteor.isCordova) {
 //   document.addEventListener('deviceready', () => {
 //     ionicSelector('app');

@@ -33,9 +33,8 @@ export class PartyDetailsComponent extends MeteorComponent implements OnInit {
 
   ngOnInit() {
     this.route.params
-      .map(params => params['partyId'])
-      .subscribe(partyId => {
-        this.partyId = partyId;
+      .subscribe(params => {
+        this.partyId = params['partyId'];
 
         this.subscribe('party', this.partyId, () => {
           this.autorun(() => {
@@ -122,7 +121,9 @@ export class PartyDetailsComponent extends MeteorComponent implements OnInit {
   }
 
   mapClicked($event: MouseEvent) {
+    //noinspection TypeScriptUnresolvedVariable
     this.party.location.lat = $event.coords.lat;
+    //noinspection TypeScriptUnresolvedVariable
     this.party.location.lng = $event.coords.lng;
   }
 }
