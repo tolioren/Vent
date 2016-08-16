@@ -26,7 +26,7 @@
     "@angular2-material/input": "^2.0.0-alpha.7",
     "@angular2-material/toolbar": "^2.0.0-alpha.7",
     "angular2-file-drop": "0.0.3",
-    "angular2-google-maps": "^0.12.0",
+    "angular2-google-maps": "^0.13.0",
     "angular2-meteor": "0.6.3-beta.5",
     "angular2-meteor-accounts-ui": "^0.6.1",
     "angular2-meteor-auto-bootstrap": "0.6.0",

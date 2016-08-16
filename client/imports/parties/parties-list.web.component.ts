@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 import { PaginationService, PaginationControlsCmp } from 'ng2-pagination';
 
 import { PartiesFormComponent } from './parties-form.component';
@@ -13,7 +12,7 @@ import template from './parties-list.web.component.html';
   selector: 'parties-list',
   template,
   viewProviders: [PaginationService],
-  directives: [PartiesFormComponent, ROUTER_DIRECTIVES, PaginationControlsCmp],
+  directives: [PartiesFormComponent, PaginationControlsCmp],
   pipes: [RsvpPipe, DisplayMainImagePipe]
 })
 export class PartiesListComponent extends PartiesList {

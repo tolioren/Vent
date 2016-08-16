@@ -28,7 +28,8 @@ import 'ng2-material/core.scss';
 runWeb();
 
 function runWeb() {
-    platformBrowserDynamic().bootstrapModule(AppModule);
+    platformBrowserDynamic().bootstrapModule(AppModule)
+        .catch((err: any) => console.error(err));
 }
 
 // function runMobile() {

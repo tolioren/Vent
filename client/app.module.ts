@@ -11,8 +11,8 @@ import { MdToolbarModule } from '@angular2-material/toolbar';
 import { MdButtonModule } from '@angular2-material/button';
 import { MdCheckboxModule } from '@angular2-material/checkbox';
 //import { bootstrap } from 'angular2-meteor-auto-bootstrap';
-import { GOOGLE_MAPS_PROVIDERS, GOOGLE_MAPS_DIRECTIVES } from 'angular2-google-maps/core';
-import { RouterModule } from '@angular/router';
+import { AgmCoreModule, MapsAPILoader  } from 'angular2-google-maps/core';
+import { RouterModule,  } from '@angular/router';
 import { METEOR_PROVIDERS } from 'angular2-meteor';
 
 import { routing } from './routes';
@@ -20,7 +20,7 @@ import {PartiesFormComponent} from './imports/parties/parties-form.component';
 import {PartiesListComponent} from './imports/parties/parties-list.web.component';
 import {PartyDetailsComponent} from './imports/parties/party-details.component';
 import {PartiesUpload} from './imports/parties/parties-upload.component';
-import {AuthModule} from './imports/auth/auth';
+import {AuthModule} from './imports/auth/auth.module';
 
 @NgModule({
     declarations: [
@@ -29,7 +29,6 @@ import {AuthModule} from './imports/auth/auth';
         PartiesListComponent,
         PartyDetailsComponent,
         PartiesUpload,
-        GOOGLE_MAPS_DIRECTIVES
     ],
     imports: [
         BrowserModule,
@@ -45,10 +44,13 @@ import {AuthModule} from './imports/auth/auth';
         MdCardModule,
         MdInputModule,
         MdCheckboxModule,
+        AgmCoreModule,
         AuthModule
-
     ],
-    providers: [GOOGLE_MAPS_PROVIDERS, METEOR_PROVIDERS],
+    providers: [
+        METEOR_PROVIDERS,
+        MapsAPILoader
+    ],
     bootstrap:    [AppWebComponent]
 })
 
