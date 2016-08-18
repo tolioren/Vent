@@ -10,10 +10,9 @@ import { MdInputModule } from '@angular2-material/input';
 import { MdToolbarModule } from '@angular2-material/toolbar';
 import { MdButtonModule } from '@angular2-material/button';
 import { MdCheckboxModule } from '@angular2-material/checkbox';
-//import { bootstrap } from 'angular2-meteor-auto-bootstrap';
 import { AgmCoreModule, MapsAPILoader  } from 'angular2-google-maps/core';
 import { RouterModule,  } from '@angular/router';
-import { METEOR_PROVIDERS } from 'angular2-meteor';
+import { METEOR_PROVIDERS, MeteorModule  } from 'angular2-meteor';
 
 import { routing } from './routes';
 import {PartiesFormComponent} from './imports/parties/parties-form.component';
@@ -32,6 +31,7 @@ import {AuthModule} from './imports/auth/auth.module';
     ],
     imports: [
         BrowserModule,
+        MeteorModule,
         // Router
         routing,
         // Forms
@@ -49,7 +49,8 @@ import {AuthModule} from './imports/auth/auth.module';
     ],
     providers: [
         METEOR_PROVIDERS,
-        MapsAPILoader
+        MapsAPILoader,
+        { provide: 'CanActivateForLoggedIn', useValue: () => !! Meteor.userId() }
     ],
     bootstrap:    [AppWebComponent]
 })

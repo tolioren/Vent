@@ -15,9 +15,5 @@ const routes: Routes = [
   { path: 'recover', component: RecoverComponent },
 ];
 
-// export const APP_ROUTER_PROVIDERS = [
-//   provideRouter(routes),
-//   { provide: 'CanActivateForLoggedIn', useValue: () => !! Meteor.userId() }
-// ];
 
 export const routing = RouterModule.forRoot(routes);
