@@ -1,5 +1,3 @@
-
-
 import { Component } from '@angular/core';
 import { MeteorComponent } from 'angular2-meteor';
 import { Meteor } from 'meteor/meteor';
@@ -24,3 +22,4 @@ export class AppComponent extends MeteorComponent {
     Meteor.logout();
   }
 }
+

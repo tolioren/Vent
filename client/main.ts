@@ -5,7 +5,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { ionicBootstrap } from 'ionic-angular';
 import { METEOR_PROVIDERS } from 'angular2-meteor';
 import { Meteor } from 'meteor/meteor';
-
+import { GOOGLE_MAPS_PROVIDERS } from 'angular2-google-maps/core';
+//google maps providers - check
 import ionicSelector from 'ionic-selector';
 
 import '../both/methods/parties.methods';
@@ -26,6 +27,10 @@ import 'ng2-material/core.scss';
 // }
 
 runWeb();
+
+
+// APP_ROUTER_PROVIDERS,
+  // GOOGLE_MAPS_PROVIDERS
 
 function runWeb() {
     platformBrowserDynamic().bootstrapModule(AppModule)

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 import { Tracker } from 'meteor/tracker';
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { MeteorComponent } from 'angular2-meteor';
 import { InjectUser } from 'angular2-meteor-accounts-ui';
+//import { GOOGLE_MAPS_DIRECTIVES, MouseEvent } from 'angular2-google-maps/core';
 
 import { Parties } from '../../../both/collections/parties.collection';
 import { Party } from '../../../both/interfaces/party.interface';
@@ -15,6 +16,7 @@ import template from './party-details.component.html';
 @Component({
   selector: 'party-details',
   template,
+  directives: [ROUTER_DIRECTIVES],
   pipes: [DisplayNamePipe]
 })
 @InjectUser('user')
@@ -113,17 +115,19 @@ export class PartyDetailsComponent extends MeteorComponent implements OnInit {
   }
 
   get lat(): number {
-    return this.party && this.party.location.lat;
+    return 1;
+    //this.party && this.party.location.lat;
   }
 
   get lng(): number {
-    return this.party && this.party.location.lng;
+    return 1;
+    //this.party && this.party.location.lng;
   }
 
-  mapClicked($event: MouseEvent) {
-    //noinspection TypeScriptUnresolvedVariable
-    this.party.location.lat = $event.coords.lat;
-    //noinspection TypeScriptUnresolvedVariable
-    this.party.location.lng = $event.coords.lng;
-  }
+  // mapClicked($event: MouseEvent) {
+  //   //noinspection TypeScriptUnresolvedVariable
+  //   this.party.location.lat = $event.coords.lat;
+  //   //noinspection TypeScriptUnresolvedVariable
+  //   this.party.location.lng = $event.coords.lng;
+  // }
 }
